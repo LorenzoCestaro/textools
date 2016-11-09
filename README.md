@@ -1,5 +1,4 @@
 # Textools
----
 
 ### About
 **Textools** provides a command line interface for extracting text from
