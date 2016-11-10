@@ -4,12 +4,13 @@ from bs4 import BeautifulSoup
 
 
 def parse(path=None, output=None, recursive=False):
+    output = output if output else path + '.txt'
 
     if recursive:
         files = [f for f in os.listdir(path) if not f.startswith('.')]
         files = [f for f in files if f.endswith('.html')]
         for index, filename in enumerate(files):
-            parse(path + filename, path + filename + '.txt', False)
+            parse(path + filename, None, False)
             print 'Parsed document ' + str(index + 1) + ' of ' + str(len(files))
 
     else:
