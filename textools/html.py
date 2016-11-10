@@ -6,8 +6,10 @@ from bs4 import BeautifulSoup
 def parse(path=None, output=None, recursive=False):
 
     if recursive:
-        for filename in os.listdir(path):
+        files = [f for f in os.listdir(path) if not f.startswith('.')]
+        for index, filename in enumerate(files):
             parse(path + filename, path + filename + '.txt', False)
+            print 'Parsed document ' + str(index + 1) + ' of ' + str(len(files))
 
     else:
         html = open(path, 'r')
