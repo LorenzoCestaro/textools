@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='textools',
     version='1.0.0',
-    description='Tools for extraction of text from pdf and html documents based on textract and beautiful soup',
+    description='Tools for text extraction from pdf and html documents based on textract and beautiful soup',
     author='LorenzoCestaro',
     author_email='lorenzo@igenius.com',
     packages=['textools'],
