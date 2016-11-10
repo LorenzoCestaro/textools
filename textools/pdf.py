@@ -9,7 +9,6 @@ def parse(path=None, output=None, recursive=False):
             parse(path + filename, path + filename + '.txt', False)
 
     else:
-        print path, output, recursive
         text = textract.process(path)
         if output is None:
             return text
