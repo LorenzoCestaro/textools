@@ -7,7 +7,7 @@ pdf and html documents. The core packages used for text extraction are
 [beautifoulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
 
 The package supports text extraction from csv files originated by crawling data
-with [dexi.io]
+with [dexi.io](dexi.io)
 
 ### Usage
 
