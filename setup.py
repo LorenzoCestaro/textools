@@ -14,6 +14,7 @@ setup(
     ],
     scripts=[
         'bin/parsepdf',
+        'bin/parsehtml',
     ],
     zip_safe=False
 )
