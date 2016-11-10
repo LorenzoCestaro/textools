@@ -4,7 +4,7 @@ import re
 import html
 
 
-def parse(path, output=None, recursive=None):
+def parse(path, label, output=None, recursive=None):
     output = output if output else path + '.html'
 
     if recursive:
@@ -16,7 +16,7 @@ def parse(path, output=None, recursive=None):
 
     else:
         csv_file = pandas.read_csv(path)
-        csv_file = csv_file['article']
+        csv_file = csv_file[label]
         html_file = open(output, 'w')
 
         for index, row in csv_file.iteritems():
