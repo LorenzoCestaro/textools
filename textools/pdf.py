@@ -18,5 +18,5 @@ def parse(path=None, output=None, recursive=False):
         else:
             f = open(output, 'w')
             f.write(text)
-            f.close
+            f.close()
             return text
