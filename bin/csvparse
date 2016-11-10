@@ -33,12 +33,13 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    '-p', '--process',
+    '-c', '--clean',
     action='store_true',
     help='Do some basic text cleaning',
     default=False,
     required=False
 )
+
 args = parser.parse_args()
 
 
@@ -48,5 +49,5 @@ csv.parse(
     label=args.label,
     output=args.output,
     recursive=args.recursive,
-    process=args.clean
+    clean=args.clean
 )

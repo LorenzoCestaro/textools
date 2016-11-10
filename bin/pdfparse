@@ -12,12 +12,6 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    '-l', '--label',
-    help='csv column label containing the html documents to parse',
-    required=True
-)
-
-parser.add_argument(
     '-o', '--output',
     help='Output file path',
     default=None,
@@ -33,12 +27,13 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    '-p', '--process',
+    '-c', '--clean',
     action='store_true',
     help='Do some basic text cleaning',
     default=False,
     required=False
 )
+
 args = parser.parse_args()
 
 
@@ -47,5 +42,5 @@ pdf.parse(
     path=args.input,
     output=args.output,
     recursive=args.recursive,
-    process=args.clean
+    clean=args.clean
 )
