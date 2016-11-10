@@ -1,10 +1,11 @@
+import text_process
 import os
 import pandas
 import re
 import html
 
 
-def parse(path, label, output=None, recursive=None):
+def parse(path, label, output=None, recursive=None, clean=False):
     output = output if output else path + '.html'
 
     if recursive:
@@ -26,4 +27,4 @@ def parse(path, label, output=None, recursive=None):
             html_file.write(row)
 
         html_file.close()
-        html.parse(path=output, output=None, recursive=False)
+        html.parse(path=output, output=None, recursive=False, clean=clean)

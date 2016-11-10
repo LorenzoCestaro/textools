@@ -1,9 +1,10 @@
+import text_process
 import os
 import re
 from bs4 import BeautifulSoup
 
 
-def parse(path=None, output=None, recursive=False):
+def parse(path=None, output=None, recursive=False, clean=False):
     output = output if output else path + '.txt'
 
     if recursive:
@@ -17,6 +18,7 @@ def parse(path=None, output=None, recursive=False):
         html = open(path, 'r')
         html = BeautifulSoup(html, 'html.parser')
         text = html.get_text()
+        text = text_process.clean(text) if clean else text
 
         if output is None:
             return text
