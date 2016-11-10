@@ -10,11 +10,13 @@ setup(
     install_requires=[
         'argparse',
         'beautifulsoup4',
+        'pandas'
         'textract',
     ],
     scripts=[
         'bin/htmlparse',
         'bin/pdfparse',
+        'bin/csvparse',
     ],
     zip_safe=False
 )
