@@ -12,7 +12,7 @@ def parse(path, label, output=None, recursive=None, clean=False):
         files = [f for f in os.listdir(path) if not f.startswith('.')]
         files = [f for f in files if f.endswith('.csv')]
         for index, filename in enumerate(files):
-            csv_to_html(path + filename, None, False)
+            csv_to_html(path + filename, label, None, False, clean)
             print 'Parsed document ' + str(index + 1) + ' of ' + str(len(files))
 
     else:
@@ -21,9 +21,10 @@ def parse(path, label, output=None, recursive=None, clean=False):
         html_file = open(output, 'w')
 
         for index, row in csv_file.iteritems():
-            row = re.sub('^"', '', row)
-            row = re.sub('","', ' ', row)
-            row = re.sub('""', '"', row)
+            row = unicode(row, 'utf-8')
+            row = re.sub(r'^"', u'', row)
+            row = re.sub(r'","', u' ', row)
+            row = re.sub(r'""', u'"', row)
             html_file.write(row)
 
         html_file.close()

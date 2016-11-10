@@ -10,7 +10,7 @@ setup(
     install_requires=[
         'argparse',
         'beautifulsoup4',
-        'pandas'
+        'pandas',
         'textract',
     ],
     scripts=[
