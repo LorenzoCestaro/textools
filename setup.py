@@ -13,8 +13,8 @@ setup(
         'textract',
     ],
     scripts=[
-        'bin/parsepdf',
-        'bin/parsehtml',
+        'bin/htmlparse',
+        'bin/pdfparse',
     ],
     zip_safe=False
 )

@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+
+import argparse
+from textools import html
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('input', help='Input file path')
+parser.add_argument('-o', '--output', help='Output file path', default=None, required=False)
+parser.add_argument('-r', '--recursive', action='store_true', help='Parse all files in a folder and save the result in a txt file with the same name as the original pdf', default=False, required=False)
+args = parser.parse_args()
+html.parse(path=args.input, output=args.output, recursive=args.recursive)
