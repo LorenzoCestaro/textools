@@ -24,6 +24,8 @@ def parse(path, label, output=None, recursive=None, clean=False):
             row = re.sub(r'^"', '', row)
             row = re.sub(r'","', ' ', row)
             row = re.sub(r'""', '"', row)
+            regex = re.compile(ur'[^\x00-\x7F]+', re.UNICODE)
+            row = re.sub(regex, '', row)
             html_file.write(row)
 
         html_file.close()
