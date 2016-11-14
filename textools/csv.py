@@ -21,10 +21,9 @@ def parse(path, label, output=None, recursive=None, clean=False):
         html_file = open(output, 'w')
 
         for index, row in csv_file.iteritems():
-            row = unicode(row, 'utf-8')
-            row = re.sub(r'^"', u'', row)
-            row = re.sub(r'","', u' ', row)
-            row = re.sub(r'""', u'"', row)
+            row = re.sub(r'^"', '', row)
+            row = re.sub(r'","', ' ', row)
+            row = re.sub(r'""', '"', row)
             html_file.write(row)
 
         html_file.close()
