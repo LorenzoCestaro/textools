@@ -17,6 +17,11 @@ def parse(path=None, output=None, recursive=False, clean=False):
     else:
         html = open(path, 'r')
         html = BeautifulSoup(html, 'html.parser')
+
+        # Kill all script and style elements
+        for script in html(["script", "style"]):
+            script.extract()
+
         text = html.get_text()
         text = text_process.clean(text) if clean else text
         f = open(output, 'w')
