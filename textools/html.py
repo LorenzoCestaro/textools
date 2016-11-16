@@ -1,6 +1,7 @@
 import text_process
 import os
 import re
+from settings import BS4_PARSER
 from bs4 import BeautifulSoup
 
 
@@ -16,7 +17,7 @@ def parse(path=None, output=None, recursive=False, clean=False):
 
     else:
         html = open(path, 'r')
-        html = BeautifulSoup(html, 'html.parser')
+        html = BeautifulSoup(html, BS4_PARSER)
 
         # Kill all script and style elements
         for script in html(["script", "style"]):
