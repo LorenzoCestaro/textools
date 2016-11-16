@@ -5,7 +5,7 @@ setup(
     version='0.1.0',
     description='Tools for text extraction from pdf and html documents based on textract and beautiful soup',
     author='LorenzoCestaro',
-    author_email='lorenzo@igenius.com',
+    author_email='lorenzo@igenius.net',
     license='MIT',
     url='https://github.com/LorenzoCestaro/parsetools',
     download_url='https://github.com/LorenzoCestaro/parsetools/tarball/0.1.3',
