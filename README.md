@@ -1,11 +1,11 @@
 # Textools
 
-**Textools** provides a command line interface for extracting text from
-pdf and html documents. The core packages used for text extraction are
+**Textools** provides a command line interface for __extracting text from
+.pdf and .html documents__. The core packages used for text extraction are
 [textract](http://textract.readthedocs.io/en/latest/python_package.html) (pdf) and
 [beautifoulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) (html).
 
-The package supports text extraction from csv files originated by crawling data from the web (e.g. with [ScraPy](https://scrapy.org/)).
+The package also supports text __extraction from .csv__ files originated by crawling data from the web (e.g. with [ScraPy](https://scrapy.org/)).
 
 * [Install](#install)
 * [Usage](#usage)
