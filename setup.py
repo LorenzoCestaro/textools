@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='textools',
-    version='1.0.0',
+    name='parsetools',
+    version='0.1.0',
     description='Tools for text extraction from pdf and html documents based on textract and beautiful soup',
     author='LorenzoCestaro',
     author_email='lorenzo@igenius.com',
