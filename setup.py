@@ -6,7 +6,9 @@ setup(
     description='Tools for text extraction from pdf and html documents based on textract and beautiful soup',
     author='LorenzoCestaro',
     author_email='lorenzo@igenius.com',
-    packages=['textools'],
+    license='MIT',
+    url='https://github.com/LorenzoCestaro/parsetools',
+    packages=['parsetools'],
     install_requires=[
         'argparse',
         'beautifulsoup4',
