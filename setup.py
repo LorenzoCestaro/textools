@@ -8,7 +8,7 @@ setup(
     author_email='lorenzo@igenius.com',
     license='MIT',
     url='https://github.com/LorenzoCestaro/parsetools',
-    download_url='https://github.com/LorenzoCestaro/parsetools/tarball/0.1.1',
+    download_url='https://github.com/LorenzoCestaro/parsetools/tarball/0.1.2',
     packages=['parsetools'],
     install_requires=[
         'argparse',
