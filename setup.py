@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='parsetools',
-    version='0.2.0',
+    version='0.2.1',
     description='Tools for text extraction from pdf and html documents based on textract and beautiful soup',
     author='Lorenzo Cestaro',
     author_email='lorenzo@igenius.net',
