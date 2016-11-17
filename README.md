@@ -17,15 +17,9 @@ ___
 
 ### Install
 
-The package is not yet published and thus not available through `pip install`.
+To install the package globally or in a virtual environment use:
 
-To be able to use the command line tools you must clone the repo:
-
-`git clone https://github.com/LorenzoCestaro/textools.git`
-
-And then you can install it locally on in a virtualenv through pip:
-
-`pip install .`
+`$ (sudo) pip install parsetools`
 
 ### Usage
 ___
@@ -33,7 +27,7 @@ ___
 Use `pdfparse` to extract text from pdf files singularly or recursively.
 
 ```
-pdfparse <path-to-input-file-or-dir> [-o --output <path-to-output>] [-r --recursive] [-c --clean]
+$ pdfparse <path-to-input-file-or-dir> [-o --output <path-to-output>] [-r --recursive] [-c --clean]
 
 -o --output:         specify an output file when parsing single files
                      Defaults to input filename if not specified or
@@ -48,7 +42,7 @@ ___
 Use `htmlparse` to extract text from html files singularly or recursively.
 
 ```
-htmlparse <path-to-input-file-or-dir> [-o --output <path-to-output>] [-r --recursive] [-c --clean]
+$ htmlparse <path-to-input-file-or-dir> [-o --output <path-to-output>] [-r --recursive] [-c --clean]
 
 -o --output:         specify an output file when parsing single files
                      Defaults to input filename if not specified or
@@ -65,7 +59,7 @@ ___
 __The command must be invoked as many times as the column labels to process.__
 
 ```
-csvparse <path-to-input-file-or-dir> <-l --label> [-o --output <path-to-output>] [-r --recursive] [-c --clean]
+$ csvparse <path-to-input-file-or-dir> <-l --label> [-o --output <path-to-output>] [-r --recursive] [-c --clean]
 
 -l --label:          specify the label of the column containing
                      the html to process
