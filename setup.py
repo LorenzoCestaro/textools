@@ -4,7 +4,7 @@ setup(
     name='parsetools',
     version='0.1.0',
     description='Tools for text extraction from pdf and html documents based on textract and beautiful soup',
-    author='LorenzoCestaro',
+    author='Lorenzo Cestaro',
     author_email='lorenzo@igenius.net',
     license='MIT',
     url='https://github.com/LorenzoCestaro/parsetools',
