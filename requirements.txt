@@ -6,7 +6,6 @@ EbookLib==0.15
 lxml==3.6.4
 numpy==1.11.2
 pandas==0.19.1
-parsetools==0.2.0
 Pillow==3.4.2
 python-dateutil==2.6.0
 python-pptx==0.6.1
