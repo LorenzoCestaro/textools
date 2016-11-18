@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-from parsetools import csv
+from parsetools import csv_parse
 
 
 parser = argparse.ArgumentParser()
@@ -44,7 +44,7 @@ args = parser.parse_args()
 
 
 # Action
-csv.parse(
+csv_parse.parse(
     path=args.input,
     label=args.label,
     output=args.output,

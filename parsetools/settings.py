@@ -21,4 +21,4 @@ MINIMUM_WORDS = 5
 # ============== #
 
 # Define the beatifoulsoup parser for parsing html
-BS4_PARSER = 'html.parser'
+BS4_PARSER = 'lxml'
