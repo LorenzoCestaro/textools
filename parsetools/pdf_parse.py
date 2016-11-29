@@ -4,6 +4,16 @@ import utils
 
 
 def parse(path=None, output=None, recursive=False, clean=False):
+    """
+    Parse pdf to extract text from single or multiple files and write results to .txt.
+    @params:
+        path      - Required : file or directory to parse (Str)
+        output    - Optional : output filename (use only if parsing single files) (Str)
+        recursive - Optional : recursive execution for directories (Bool)
+        clean     - Optional : preprocessing of the input with utils.clean (Bool)
+    @returns:
+        text      - The processed text
+    """
     output = output if output else path + '.txt'
 
     if recursive:

@@ -13,7 +13,7 @@ def clean(text):
     """
     Computes simple preprocessing on the imput text
     @params:
-        text   - Required  : text to process (Str)
+        text - Required  : text to process (Str)
     """
     text = text.lower() if s.TO_LOWERCASE else text
     text = text.upper() if s.TO_UPPERCASE else text
@@ -42,9 +42,9 @@ def clean(text):
 
 def readcsv(path):
     """
-    Read csv line by line and return a dictionary of label: value pairs
+    Read csv line by line and return a dictionary of label:value pairs
     @params:
-        path   - Required  : path to the input csv file (Str)
+        path - Required : path to the input csv file (Str)
     """
     for index, line in enumerate(csv.reader(open(path, 'r'))):
         if index == 0:
@@ -82,3 +82,26 @@ def printProgress(iteration, total, prefix='', suffix='', decimals=1, barLength=
     if iteration == total:
         sys.stdout.write('\n')
     sys.stdout.flush()
+
+
+def progressbar_update(done, path):
+    """
+    Update state of terminal progress bar for tracking file reading. It compares
+    the size of the target file with the size of the data processed until
+    invocation.
+    @params:
+        done - Required : bytes of file read until invocation (Int)
+        path - Required : path to the file that is being read (Int)
+    @returns:
+        printProgress() : function that renders the progress bar
+    """
+    tot = os.path.getsize(path)
+    filename = path.split('/')[-1]
+
+    return printProgress(
+        done,
+        tot,
+        prefix='Reading %s:' % filename,
+        suffix='Complete',
+        barLength=50
+    )

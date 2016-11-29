@@ -6,6 +6,15 @@ import utils
 
 
 def parse(path, label, output=None, recursive=None, clean=False):
+    """
+    Read csv to extract and parse html from single or multiple files and write results to .txt.
+    @params:
+        path      - Required : file or directory to parse (Str)
+        label     - Required : csv variable name in which html is stored
+        output    - Optional : output filename (use only if parsing single files) (Str)
+        recursive - Optional : recursive execution for directories (Bool)
+        clean     - Optional : preprocessing of the input with utils.clean (Bool)
+    """
     output = output if output else path + '.html'
 
     if recursive:
@@ -16,7 +25,7 @@ def parse(path, label, output=None, recursive=None, clean=False):
             print 'Parsed document ' + str(index + 1) + ' of ' + str(len(files))
 
     else:
-        progressbar_update(0, path)
+        utils.progressbar_update(0, path)
         read_size = 0
         html_file = open(output, 'w+')
         for index, row in enumerate(utils.readcsv(path)):
@@ -28,20 +37,7 @@ def parse(path, label, output=None, recursive=None, clean=False):
             row = re.sub('<article', '\n<article', row)
             html_file.write(row)
 
-            progressbar_update(read_size, path)
+            utils.progressbar_update(read_size, path)
 
         html_file.close()
         html_parse.parse(path=output, output=None, recursive=False, clean=clean)
-
-
-def progressbar_update(done, path):
-    tot = os.path.getsize(path)
-    filename = path.split('/')[-1]
-
-    return utils.printProgress(
-        done,
-        tot,
-        prefix='Reading %s:' % filename,
-        suffix='Complete',
-        barLength=50
-    )

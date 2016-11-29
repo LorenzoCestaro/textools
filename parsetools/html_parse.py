@@ -7,6 +7,16 @@ import utils
 
 
 def parse(path=None, output=None, recursive=False, clean=False):
+    """
+    Parse html source text from single or multiple files and write results to .txt.
+    @params:
+        path      - Required : file or directory to parse (Str)
+        output    - Optional : output filename (use only if parsing single files) (Str)
+        recursive - Optional : recursive execution for directories (Bool)
+        clean     - Optional : preprocessing of the input with utils.clean (Bool)
+    @returns:
+        text      - The processed text
+    """
     output = output if output else path + '.txt'
 
     if recursive:
@@ -17,7 +27,7 @@ def parse(path=None, output=None, recursive=False, clean=False):
             print 'Parsed document ' + str(index + 1) + ' of ' + str(len(files))
 
     else:
-        progressbar_update(0, path)
+        utils.progressbar_update(0, path)
         read_size = 0
         f = open(output, 'w+')
         for index, line in enumerate(open(path)):
@@ -31,20 +41,7 @@ def parse(path=None, output=None, recursive=False, clean=False):
             text = utils.clean(text) if clean else text
             f.write(text.encode('utf8'))
 
-            progressbar_update(read_size, path)
+            utils.progressbar_update(read_size, path)
 
         f.close()
         return text
-
-
-def progressbar_update(done, path):
-    tot = os.path.getsize(path)
-    filename = path.split('/')[-1]
-
-    return utils.printProgress(
-        done,
-        tot,
-        prefix='Extracting text from %s:' % filename,
-        suffix='Complete',
-        barLength=50
-    )
