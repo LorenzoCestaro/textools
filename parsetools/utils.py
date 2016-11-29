@@ -11,7 +11,7 @@ csv.field_size_limit(sys.maxsize)
 
 def clean(text):
     """
-    Computes simple preprocessing on the imput text
+    Computes simple preprocessing on the input text
     @params:
         text - Required  : text to process (Str)
     """
